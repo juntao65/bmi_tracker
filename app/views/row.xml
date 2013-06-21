@@ -1,0 +1,13 @@
+<Alloy>
+
+	<TableViewRow class="entry_trow" hasDetail="true" editable="true">
+		
+		<!--leftside-->
+		<Label class="label_bmi" text="{bmi}"/>
+		<Label class="label_weight" text="{weight}"/>
+		
+		<!--rightside-->
+		<Label class="label_date" text="{dateSince}"/>
+		
+	</TableViewRow>
+</Alloy>

@@ -1,0 +1,39 @@
+
+".setup_label": {
+	top:30,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	color: "#000",
+	font: {
+		fontSize: 20,
+		fontFamily: 'Helvetica Neue'
+	},
+	textAlign: 'center'
+
+},
+".inputtext": {
+	//top: 50,
+	width: "85%",
+	height:"40dp",
+	borderStyle:Ti.UI.INPUT_BORDERSTYLE_ROUNDED
+},
+".bold": {
+	font: {
+		fontWeight:"bold"
+	}
+},
+".label_subtitle_right" : {
+	right:10,
+	color:"#5d87a1",
+	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT
+},
+".label_title" : {
+	left:10,
+	font: {
+		fontSize:20,
+		fontWeight:"bold"
+	}
+},
+"#part1" : {
+	font: {fontSize: 14, fontFamily: "pencilCASE"}
+}

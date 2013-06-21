@@ -1,0 +1,42 @@
+<Alloy>
+	<Window id="add_entry" navBarHidden="true">
+	<NavigationGroup id="navgroup" platform="ios">
+		<Window id="win1" title="Add entry" backgroundColor="#ccc">
+			<LeftNavButton>
+				<Button id="cancel" title="Cancel" onClick="closeAddModal"></Button>
+			</LeftNavButton>
+			
+			<RightNavButton>
+				<Button id="add" title="Add" systemButton="Titanium.UI.iPhone.SystemButton.DONE" onClick="addEntry"></Button>
+			</RightNavButton>
+
+			<TableView id="theTable" style="Ti.UI.iPhone.TableViewStyle.GROUPED" backgroundColor='#eee'>
+				<TableViewSection id="tsection_weiht">
+					<TableViewRow id="trow_weight" title="Weight" class="trow">
+						<TextField id="textfield_weight" hintText="use pounds"></TextField>
+						
+					</TableViewRow>
+				</TableViewSection>
+				
+				<TableViewSection>
+					<TableViewRow class="trow" title="Date" hasChild="true" onClick="showDateModal">
+						<Label id="label_date" right="5" height="auto" textAlign="right"></Label>
+					</TableViewRow>
+				</TableViewSection>
+				
+				<TableViewSection id="section1">
+				</TableViewSection>
+				
+				<!-->
+				<TableViewSection id="sectionDelete" visible="false">
+					<TableViewRow id="rowDelete" backgroundColor="#f00" height="1" selectedBackgroundColor="#8C1717">
+						<Label id="label_delete" color="#fff">Delete Entry</Label>
+					</TableViewRow>
+				</TableViewSection>-->
+				
+			</TableView>
+		
+		</Window>
+	</NavigationGroup>
+	</Window>
+</Alloy>

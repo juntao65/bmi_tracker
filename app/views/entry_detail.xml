@@ -1,0 +1,30 @@
+<Alloy>
+	<Window id="win_entry" title="Entry Detail" backgroundColor="#ccc">
+		<RightNavButton>
+			<Button id="edit" title="Edit" systemButton="Titanium.UI.iPhone.SystemButton.EDIT"></Button>
+		</RightNavButton>
+
+		<TableView style="Titanium.UI.iPhone.TableViewStyle.GROUPED" minRowHeight="44dip">
+			<TableViewSection>
+				
+				<TableViewRow class="entry_trow" selectionStyle="Titanium.UI.iPhone.TableViewCellSelectionStyle.NONE">
+		
+					<!--leftside-->
+					<Label id="bmi" class="label_bmi" text=""/>
+					<Label id="weight" class="label_weight" text=""/>
+					
+					<!--rightside-->
+					<Label id="date" class="label_date" text="adsfa"/>
+					
+				</TableViewRow>
+				<TableViewRow layout="vertical">
+					<WebView id="webview" height="200" url="canvas.html"/>
+				</TableViewRow>
+			</TableViewSection>
+			
+			
+		</TableView>
+	
+	</Window>
+</Alloy>
+

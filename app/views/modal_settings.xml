@@ -1,0 +1,12 @@
+<Alloy>
+	<Window id="win_container" navBarHidden="true">
+        <NavigationGroup id="navgroup" platform="ios">
+            <Window id="win1" title="Age" backgroundColor="#ccc" layout="vertical">
+
+            	<Label class="setup_label" text="How old are you?"/>
+            	<TextField id="textfield_age" class="inputtext" hintText="in years" keyboardType="Titanium.UI.KEYBOARD_NUMBER_PAD"></TextField>
+
+            </Window>
+        </NavigationGroup>
+    </Window>
+</Alloy>

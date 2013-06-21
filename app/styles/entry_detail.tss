@@ -1,0 +1,27 @@
+".entry_trow" : {
+	height:55
+},
+".label_bmi" : {
+	left:5,
+	top:5,
+	font: { fontSize:24 },
+	//shadowColor: '#aaa',
+	//shadowOffset: {x:5, y:5},
+	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT
+	//width: Ti.UI.SIZE, height: Ti.UI.SIZE
+},
+".label_weight" : {
+	left:5, 
+	top:30,
+	color:"#666666",
+	font: { fontSize:12 },
+	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT
+	//width: Ti.UI.SIZE, height: Ti.UI.SIZE
+},
+".label_date" : {
+	right:5,
+	color:"#5d87a1",
+	font: { fontSize:14 },
+	//color:"#ccc",
+	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT
+}

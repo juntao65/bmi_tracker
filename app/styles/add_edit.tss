@@ -1,0 +1,15 @@
+".trow":{
+	height:50,
+	backgroundColor:'#fff'
+},
+"#textfield_weight":{
+	left:100,
+	height:"auto",
+	keyboardType:Titanium.UI.KEYBOARD_NUMBER_PAD
+},
+"#label_delete":{
+	font: {
+		fontSize:20,
+		fontWeight:"bold"
+	}
+}

@@ -1,0 +1,19 @@
+<Alloy>
+	<Collection src="entries"/>
+	
+	<Tab title="Tracker" id="tab_tracker" icon="images/light_stats-bars.png">
+		<Window title="Tracker" id="Tracker">
+			<RightNavButton>
+				<Button id="add" title="Add" systemButton="Titanium.UI.iPhone.SystemButton.ADD" onClick="showAddModal"></Button>
+			</RightNavButton>
+			
+			<ImageView id="imgTutorial" image="/images/tutorial.png" visible="false" />
+	
+			<TableView id="table_entries" dataCollection="entries" dataTransform="doTransform" visible="false">
+				<Require src="row"/>
+				
+			</TableView>
+			
+		</Window>
+	</Tab>
+</Alloy>
