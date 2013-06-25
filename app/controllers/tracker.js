@@ -12,7 +12,7 @@ var helpers = require('helpers');
 		helpers.removeItem(entries, e.index);
 	});
 	
-	//show edit screen when click on tableviewrow
+	//show entry_detail screen when click on tableviewrow
 	$.table_entries.addEventListener('click',function(e){
 		var entry_detail = Alloy.createController('entry_detail').getTheView({model:e.row.model});
 		$.tab_tracker.open(entry_detail);

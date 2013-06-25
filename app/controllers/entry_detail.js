@@ -6,13 +6,15 @@ this.getTheView = function(e){
 	var id = e.model.alloy_id;
 
 	
-	// get current entry from DB/mode/whatever the fuck
-	var entry = entries.get(id);	
+	
 	var jsString;
 	
 	
 	// set field values
 	$.win_entry.addEventListener('focus',function(){
+		
+		// get current entry from DB/mode/whatever the fuck
+		var entry = entries.get(id);	
 		
 		var weight = entry.get('weight');
 		var height_ft = Ti.App.Properties.getString('height_ft','').replace("'","");
@@ -40,6 +42,7 @@ this.getTheView = function(e){
 	$.webview.addEventListener('load',function(){
 		// evaluate jsString inside the webviewa
 		$.webview.evalJS(jsString);
+	
 	});
 	
 	$.webview.reload();
