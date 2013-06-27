@@ -218,3 +218,4 @@ this.showAddEntryModal = function(e){
 		});
 	}
 }
+

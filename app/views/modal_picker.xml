@@ -1,8 +1,8 @@
 <Alloy>
 	<Window id="modal_picker_window" backgroundImage="stripped_bg.jpg">
 		
-		<TableView id="tableview_modalpicker" style="Titanium.UI.iPhone.TableViewStyle.GROUPED" minRowHeight="44dip" allowsSelection="true">
-				<TableViewRow id="trow_mp" title="Age">
+		<TableView id="tableview_modalpicker" class="grouped_table" style="Titanium.UI.iPhone.TableViewStyle.GROUPED" minRowHeight="44dip" allowsSelection="true">
+				<TableViewRow id="trow_mp" class="grouped_trow" title="">
 					<Label id="label_sub" class="label_subtitle_right" color="#fff"/>
 				</TableViewRow>
 		</TableView>

@@ -2,9 +2,10 @@
 	<Tab id="tabSettings" title="Settings" icon="images/light_gear.png">
 		<Window title="Settings" id="Settings">
 			
-			<TableView style="Titanium.UI.iPhone.TableViewStyle.GROUPED" minRowHeight="50dip">
+			<TableView style="Titanium.UI.iPhone.TableViewStyle.GROUPED" class="grouped_table" id="table_settings" minRowHeight="50dip">
 				<TableViewSection>
-					<TableViewRow hasChild="true" onClick="showAgePicker">
+					
+					<TableViewRow hasChild="true" class="grouped_trow" onClick="showAgePicker">
 						<Label class="label_title">Age</Label>
 						<Label id="label_age" class="label_subtitle_right"></Label>
 					
@@ -13,7 +14,7 @@
 				</TableViewSection>
 				
 				<TableViewSection>
-					<TableViewRow hasChild="true" onClick="showGenderPicker">
+					<TableViewRow hasChild="true" class="grouped_trow" onClick="showGenderPicker">
 						<Label class="label_title">Gender</Label>
 						<Label id="label_gender" class="label_subtitle_right"></Label>
 						
@@ -22,7 +23,7 @@
 				</TableViewSection>
 				
 				<TableViewSection>
-					<TableViewRow  hasChild="true" onClick="showHeightPicker">
+					<TableViewRow  hasChild="true" class="grouped_trow" onClick="showHeightPicker">
 						<Label class="label_title">Height</Label>
 						<Label id="label_height" class="label_subtitle_right"></Label>
 						

@@ -1,4 +1,6 @@
-
+"Window":{
+	barColor:"#000"
+},
 ".setup_label": {
 	top:30,
 	width: Ti.UI.SIZE,
@@ -21,6 +23,12 @@
 	font: {
 		fontWeight:"bold"
 	}
+},
+".grouped_table":{
+	backgroundColor:"#eee"
+},
+".grouped_trow":{
+	backgroundColor:"#fff"
 },
 ".label_subtitle_right" : {
 	right:10,
