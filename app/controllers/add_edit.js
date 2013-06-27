@@ -194,7 +194,7 @@ this.showAddEntryModal = function(e){
 		})();
 		
 	}else{
-		//////////
+		/////////
 		//	ADD 
 		
 		// set today's date as default on date_label
