@@ -217,5 +217,5 @@ this.showAddEntryModal = function(e){
 			$.textfield_weight.focus();
 		});
 	}
-}
+} 
 
