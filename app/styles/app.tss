@@ -1,5 +1,5 @@
 "Window":{
-	barColor:"#000"
+	//barColor:"#0000ff"
 },
 ".setup_label": {
 	top:30,
