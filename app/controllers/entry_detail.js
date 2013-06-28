@@ -5,24 +5,34 @@ this.getTheView = function(e){
 	var entries = Alloy.Collections.entries;
 	var id = e.model.alloy_id;
 
-	
-	
+	// declare vars so scope is in entire fxn
+	var entry;
+	var weight;
+	var height_ft;
+	var height_in;
+	var bmi;
 	var jsString;
 	
+	var setAllVars = function(){
+		// get current entry from DB/mode/whatever the fuck
+		entry = entries.get(id);	
+		
+		weight = entry.get('weight');
+		height_ft = Ti.App.Properties.getString('height_ft','').replace("'","");
+		height_in = Ti.App.Properties.getString('height_in','').replace('"',"");
+		bmi = helpers.calculateBMI(weight);
+		
+		// function to draw on canvas
+		jsString = "window.onload = draw(" + weight + ',' + height_ft + ',' + height_in + ',' + bmi + ");";
+		
+	}
 	
 	// set field values
 	$.win_entry.addEventListener('focus',function(){
 		
-		// get current entry from DB/mode/whatever the fuck
-		var entry = entries.get(id);	
-		
-		var weight = entry.get('weight');
-		var height_ft = Ti.App.Properties.getString('height_ft','').replace("'","");
-		var height_in = Ti.App.Properties.getString('height_in','').replace('"',"");
-		var bmi = helpers.calculateBMI(weight);
-		
-		// function to draw on canvas
-		jsString = "window.onload = draw(" + weight + ',' + height_ft + ',' + height_in + ',' + bmi + ");";
+		// To make sure the variables are fresh
+		// incase user edited them
+		setAllVars();
 		
 		// fill in fields 
 		// TODO: look into using collections + 
@@ -32,8 +42,7 @@ this.getTheView = function(e){
 		$.bmi.text = "BMI: " + bmi;
 		$.date.text = moment(entry.get('date'),'YYYYMMDDHHmmss').format('MMMM Do YYYY');
 		
-		
-		$.webview.reload();
+		$.webview.fireEvent('load',null);		// so can reload if user edits
 		
 	});
 	
@@ -41,11 +50,11 @@ this.getTheView = function(e){
 	// execute for some reason
 	$.webview.addEventListener('load',function(){
 		// evaluate jsString inside the webviewa
+		setAllVars();
 		$.webview.evalJS(jsString);
-	
+
 	});
 	
-	$.webview.reload();
 	
 	// edit listener
 	$.edit.addEventListener('click',function(){

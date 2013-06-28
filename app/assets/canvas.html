@@ -1,0 +1,137 @@
+<HTML>
+<head>
+	<style>
+		@font-face {
+			font-family: 'pencilCASE';
+		}
+		
+		#myCanvas{background-color:#fff;}
+	</style>
+	
+	<script type="text/javascript">
+	//draw();
+	//draw(185,5,8,24);
+	
+	function draw(weight,height_ft,height_in,bmi){
+		
+		//alert('drawing ' + weight)
+	
+		// it's a canvas zhou
+		var b_canvas =  document.getElementById('myCanvas');
+		if (typeof(b_canvas) == 'undefined' || b_canvas == null){
+			var b_canvas = document.createElement('canvas');
+			b_canvas.setAttribute('id','myCanvas');
+			
+		}
+		
+		// make sure body is even loaded
+		if(document.body == null){
+			window.onload = function(){
+				Ti.API.info('body loaded!');
+				draw(weight,height_ft,height_in,bmi);
+			}
+			return;
+		}
+		
+	
+		document.body.insertBefore(b_canvas, document.body.firstChild);
+		
+		//var b_canvas = document.getElementById("myCanvas");
+		
+		var b_context = b_canvas.getContext("2d");
+		
+		b_context.canvas.width  = 285;
+ 		b_context.canvas.height = 150;
+		
+		
+		
+		// draw grid lines
+		for (var x = 0.5; x < 500; x += 10) {
+		  b_context.moveTo(x, 0);
+		  b_context.lineTo(x, 375);
+		}
+		
+		for (var y = 0.5; y < 375; y += 10) {
+		  b_context.moveTo(0, y);
+		  b_context.lineTo(500, y);
+		}
+		
+		
+		
+		b_context.strokeStyle = "#eee";
+		b_context.stroke();
+		
+		// bmi text
+		//b_context.font = "bold 20px sans-serif pencilCASE";
+		b_context.font = "30pt pencilCASE";
+		b_context.textBaseline = "top";
+		b_context.fillText("BMI", 10, 40);
+		b_context.fillText("=", 75, 40);
+		
+		
+		b_context.font = "18pt pencilCASE";
+		b_context.fillText("703 x", 100, 40);
+		
+		// draw division line
+		b_context.beginPath();
+		b_context.moveTo(160, 50);
+		b_context.lineTo(250, 50);
+		
+		// fill in line
+		b_context.strokeStyle = "#000";
+		b_context.stroke();
+		
+		// top text
+		b_context.textBaseline = "bottom";
+		b_context.fillText(weight + "lbs", 190, 45);
+		
+		// bottom text
+		b_context.font = "17pt pencilCASE";
+		b_context.textBaseline = "top";
+		b_context.fillText("(" + height_ft + "' x 12 + " + height_in + "\")" + String.fromCharCode(178), 155, 55);
+		
+		
+		// final bmi value
+		b_context.font = "30pt pencilCASE";
+		b_context.fillText("=", 75, 100);
+		
+		b_context.font = "40pt pencilCASE";
+		b_context.fillText(bmi, 125, 90);
+		
+		// circle it with oval
+		if(bmi.toString().length > 2){
+			drawEllipse(b_context, 100, 85, 120, 60);
+		}else{
+			drawEllipse(b_context, 100, 85, 100, 60);
+		}
+		
+		
+		
+	}
+	function drawEllipse(ctx, x, y, w, h) {
+	  var kappa = .5522848,
+	      ox = (w / 2) * kappa, // control point offset horizontal
+	      oy = (h / 2) * kappa, // control point offset vertical
+	      xe = x + w,           // x-end
+	      ye = y + h,           // y-end
+	      xm = x + w / 2,       // x-middle
+	      ym = y + h / 2;       // y-middle
+	
+	  ctx.beginPath();
+	  ctx.moveTo(x, ym);
+	  ctx.bezierCurveTo(x, ym - oy, xm - ox, y, xm, y);
+	  ctx.bezierCurveTo(xm + ox, y, xe, ym - oy, xe, ym);
+	  ctx.bezierCurveTo(xe, ym + oy, xm + ox, ye, xm, ye);
+	  ctx.bezierCurveTo(xm - ox, ye, x, ym + oy, x, ym);
+	  ctx.closePath();
+	  ctx.stroke();
+	}
+
+	</script>
+</head>
+<body>
+	
+	<!--<canvas id="myCanvas" style="border:1px solid #000000;"></canvas>-->
+	
+</body>
+</HTML>
