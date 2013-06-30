@@ -57,10 +57,13 @@ this.showPicker = function(e){
 	//	DONE or custom button for when user is done entering data
 	if(typeof e.doneButton !== "undefined"){
 		var doneBtn = e.doneButton;
+		//doneBtn.id = "done";
 		$.modal_picker_window.rightNavButton = doneBtn;
 	}else{
-		var doneBtn = Ti.UI.createButton({ systemButton:Titanium.UI.iPhone.SystemButton.SAVE });
-		$.modal_picker_window.rightNavButton = doneBtn;
+		//var doneBtn = Ti.UI.createButton({ systemButton:Titanium.UI.iPhone.SystemButton.SAVE });
+		//$.modal_picker_window.rightNavButton = doneBtn;
+		
+		var doneBtn = $.done;
 	}
 	
 	if(!returnView){

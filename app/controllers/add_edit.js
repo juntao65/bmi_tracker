@@ -127,6 +127,8 @@ $.add_entry.addEventListener('focus',function(){
 	
 })
 
+//alert($.add.toImage().height);
+//$.add.font = { fontSize: 12, fontWeight:"bold"} 
 
 
 this.showAddEntryModal = function(e){

@@ -42,7 +42,7 @@ this.getTheView = function(e){
 		$.bmi.text = "BMI: " + bmi;
 		$.date.text = moment(entry.get('date'),'YYYYMMDDHHmmss').format('MMMM Do YYYY');
 		
-		$.webview.fireEvent('load',null);		// so can reload if user edits
+		$.webview.fireEvent('load',{});		// so can reload if user edits
 		
 	});
 	

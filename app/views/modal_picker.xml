@@ -1,5 +1,8 @@
 <Alloy>
 	<Window id="modal_picker_window" backgroundImage="stripped_bg.jpg">
+		<RightNavButton>
+			<Button id="done" class="btn_blue_nav" title="Save"></Button>
+		</RightNavButton>
 		
 		<TableView id="tableview_modalpicker" class="grouped_table" style="Titanium.UI.iPhone.TableViewStyle.GROUPED" minRowHeight="44dip" allowsSelection="true">
 				<TableViewRow id="trow_mp" class="grouped_trow" title="">

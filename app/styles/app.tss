@@ -1,5 +1,11 @@
 "Window":{
-	//barColor:"#0000ff"
+	barColor:"#000"
+},
+".btn_blue_nav": {
+	width:50,
+	height:29,
+	backgroundImage:"images/bg_btn_blue.png",
+	font:{ fontSize: 12, fontWeight:"bold"} 
 },
 ".setup_label": {
 	top:30,

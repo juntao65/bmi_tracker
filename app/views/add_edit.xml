@@ -14,7 +14,8 @@
 					</Labels>
 				</ButtonBar>
 				-->
-				<Button id="add" title="Add" systemButton="Titanium.UI.iPhone.SystemButton.DONE" onClick="addEntry"></Button>
+				<!--<Button id="add" title="Add" systemButton="Titanium.UI.iPhone.SystemButton.DONE" onClick="addEntry"></Button>-->
+				<Button id="add" class="btn_blue_nav" title="Done" onClick="addEntry"></Button>
 			</RightNavButton>
 
 			<TableView id="theTable" style="Ti.UI.iPhone.TableViewStyle.GROUPED" class="grouped_table">
